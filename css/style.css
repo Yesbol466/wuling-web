@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 200% 200%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-position 0.5s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+    background-position: 100% 0;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+.language-options {
+    display: flex;
+}
+
+.language-options a {
+    color: #fff;
+    margin-left: 10px;
+}
+
+main {
+    padding: 20px;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 50px); /* Adjust as per header height */
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+}
+
+#prev, #next {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.car-details {
+    margin-top: 20px;
+}
+
+.car-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.car-details th, .car-details td {
+    padding: 10px;
+    border: 1px solid #fff;
+}
+
+#contact-form {
+    margin-top: 20px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 400px;
+}
