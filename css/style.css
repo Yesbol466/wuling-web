@@ -1,14 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e0e0e0; /* Slightly darker white */
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #222;
+    background-color: #f5f5f5; /* Soft light greyish white for header */
     padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -34,15 +35,16 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     padding: 10px 20px;
     transition: color 0.3s ease;
     position: relative;
+    font-weight: bold;
 }
 
 nav ul li a::before {
@@ -54,7 +56,7 @@ nav ul li a::before {
     bottom: 0;
     border-radius: 5px;
     border: 2px solid transparent;
-    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background: linear-gradient(45deg, #3a8fd7, #0066cc);
     background-size: 200% 200%;
     z-index: -1;
     opacity: 0;
@@ -67,7 +69,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    color: #fff;
+    color: #0066cc;
 }
 
 .language-options {
@@ -78,20 +80,21 @@ nav ul li a:hover {
     color: #fff;
     margin-left: 10px;
     padding: 8px 16px;
-    background-color: #007bff;
-    border-radius: 5px;
+    background-color: #0066cc;
+    border-radius: 25px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .language-options a:hover {
-    background-color: #0056b3;
+    background-color: #004c99;
+    transform: scale(1.05);
 }
 
 main {
-    padding: 20px;
-    background: url('../images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 50px); /* Adjust as per header height */
+    padding: 40px;
+    background-color: #e0e0e0; /* Slightly darker white for main background */
 }
 
 .gallery {
@@ -118,7 +121,7 @@ main {
 
 .car-details th, .car-details td {
     padding: 10px;
-    border: 1px solid #fff;
+    border: 1px solid #333;
 }
 
 #contact-form {
@@ -130,21 +133,203 @@ main {
     height: 400px;
 }
 
-/* New Button Styles */
+/* Button Styles */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: #007bff;
+    background-color: #0066cc;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #004c99;
+    transform: scale(1.05);
+}
+
+/* Car Grid Layout */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.car-item {
+    background-color: #f5f5f5; /* Light grey background for car items */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.car-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 15px 10px rgba(0, 102, 204, 0.4);
+    transform: translateY(-5px);
+}
+
+.car-item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.car-item img:hover {
+    transform: scale(1.05);
+}
+
+.car-item h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.car-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.car-item .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-item .btn:hover {
+    background-color: #004c99;
+    transform: scale(1.05);
+}
+
+/* Search Input */
+#search {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+/* For car detail image */
+.gallery {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Aligns vertically, if necessary */
+    margin-bottom: 20px;
+    position:relative;
+}
+.gallery-button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#prev-image {
+    left: 10px;
+}
+
+#next-image {
+    right: 10px;
+}
+
+#prev-image:hover, #next-image:hover {
+    background-color: #004c99;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+
+/* For car detail table */
+.car-details table {
+    width: 100%; /* Ensure the table fits the page */
+    max-width: 800px; /* Limit max width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-details th, .car-details td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.car-details th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.car-details tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+/* Responsive table for small screens */
+@media (max-width: 768px) {
+    .car-details table,
+    .car-details tbody,
+    .car-details th,
+    .car-details td,
+    .car-details tr {
+        display: block;
+    }
+
+    .car-details td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .car-details td:before {
+        content: attr(data-label); /* Add labels for small screens */
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
 }

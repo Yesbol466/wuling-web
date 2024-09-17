@@ -9,8 +9,8 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="images/Logo-Wuling-only-and-Tagline-only-WHITE-03-500x243-1.png" alt="Wulling Logo">
-                <span data-translate="welcome">Wulling</span>
+                <img src="images/Wuling-logo.svg.png" alt="Wulling Logo">
+               
             </div>
             <ul>
                 <li><a href="index.html" data-translate="home">Home</a></li>
@@ -28,9 +28,18 @@
     </header>
     <main>
         <h1 data-translate="our_cars">Our Cars</h1>
-        <input type="text" id="search" placeholder="Search cars..." data-translate="search_cars">
-        <div id="car-list" class="car-gallery">
-            <!-- Car items will be dynamically inserted here -->
+
+        <!-- Sorting Dropdown -->
+        <div class="sorting-container">
+            <label for="sort-cars">Sort by:</label>
+            <select id="sort-cars">
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+
+        <div id="car-list" class="car-grid">
+            <!-- Cars will be dynamically inserted here -->
         </div>
     </main>
     <script src="js/script.js"></script>
