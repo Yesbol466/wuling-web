@@ -1,21 +1,48 @@
-body {
+body.index-page {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #e0e0e0; /* Slightly darker white */
-    color: #333;
+    background-image: url('/images/background-middle-2-home-wuling-rev.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top 70px;
+    background-repeat: no-repeat;
+    color: #FFFFE0;
     margin: 0;
-    padding: 0;
+    padding: 1;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
 }
 
 header {
-    background-color: #f5f5f5; /* Soft light greyish white for header */
+    background-color: rgba(245, 245, 245, 0.9); /* Soft light greyish white for header with slight transparency */
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Ensure header is above the background image */
+}
+
+main {
+    padding: 40px;
+     /* Semi-transparent white for main background */
+    position: relative;
+    z-index: 1; /* Ensure main content is above the background image */
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
 }
 
 nav .logo {
@@ -25,7 +52,6 @@ nav .logo {
 
 nav .logo img {
     height: 40px;
-    margin-right: 10px;
 }
 
 nav ul {
@@ -94,7 +120,9 @@ nav ul li a:hover {
 
 main {
     padding: 40px;
-    background-color: #e0e0e0; /* Slightly darker white for main background */
+    /* background-color: #e0e0e0; */
+   
+    /* Slightly darker white for main background */
 }
 
 .gallery {
